@@ -1,10 +1,10 @@
-package com.naila.springboot;
+package com.naila.nelioalvesspringboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootApplicationTests {
+class NelioalvesspringbootApplicationTests {
 
     @Test
     void contextLoads() {
