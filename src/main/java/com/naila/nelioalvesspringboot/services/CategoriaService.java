@@ -2,6 +2,7 @@ package com.naila.nelioalvesspringboot.services;
 
 import com.naila.nelioalvesspringboot.domain.Categoria;
 import com.naila.nelioalvesspringboot.repositories.CategoriaRepository;
+import com.naila.nelioalvesspringboot.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,8 @@ public class CategoriaService {
 
     public Categoria buscar(Integer id) {
         Optional<Categoria> optional = repo.findById(id);
-        return optional.orElse(null);
+        return optional.orElseThrow(() -> new ObjectNotFoundException(
+                "Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
     }
 
 

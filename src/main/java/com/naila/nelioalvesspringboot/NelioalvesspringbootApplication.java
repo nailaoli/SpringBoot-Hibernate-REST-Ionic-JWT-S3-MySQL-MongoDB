@@ -38,4 +38,5 @@ public class NelioalvesspringbootApplication implements CommandLineRunner {
         categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
         produtoRepository.saveAll(Arrays.asList(prod1, prod2, prod3));
     }
+
 }
