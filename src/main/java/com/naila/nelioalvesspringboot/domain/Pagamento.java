@@ -1,5 +1,6 @@
 package com.naila.nelioalvesspringboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.naila.nelioalvesspringboot.domain.enums.EstadoPagamento;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public abstract class Pagamento implements Serializable {
     @OneToOne
     @JoinColumn(name="pedido_id")
     @MapsId
+    @JsonBackReference
     private Pedido pedido;
 
     public Pagamento(){

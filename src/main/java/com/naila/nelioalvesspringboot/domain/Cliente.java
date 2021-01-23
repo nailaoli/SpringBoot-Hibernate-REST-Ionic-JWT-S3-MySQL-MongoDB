@@ -1,5 +1,6 @@
 package com.naila.nelioalvesspringboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.naila.nelioalvesspringboot.domain.enums.TipoCliente;
 
@@ -27,6 +28,7 @@ public class Cliente implements Serializable {
     @CollectionTable(name="TELEFONE")
     private Set<String> telefones = new HashSet<>();
     @OneToMany(mappedBy = "cliente")
+    @JsonBackReference
     private List<Pedido> pedidos = new ArrayList<>();
 
     public Cliente(){

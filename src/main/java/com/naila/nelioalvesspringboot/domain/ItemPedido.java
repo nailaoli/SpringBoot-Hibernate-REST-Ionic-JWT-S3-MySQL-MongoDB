@@ -1,5 +1,7 @@
 package com.naila.nelioalvesspringboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import java.io.Serializable;
@@ -10,6 +12,7 @@ public class ItemPedido implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
+    @JsonIgnore
     private ItemPedidoPk id = new ItemPedidoPk();
     private Double desconto;
     private Integer quantidade;
@@ -34,6 +37,7 @@ public class ItemPedido implements Serializable {
         this.id = id;
     }
 
+    @JsonIgnore
     public Pedido getPedido() {
         return id.getPedido();
     }
